@@ -1,6 +1,5 @@
 % \VignetteIndexEntry{Adaptive Gene Picking for Microarray Expression Data Analysis}
 % \VignetteDepends{pickgene}
-% \VignetteDepends{modreg}
 % \VignetteKeywords{mRNA,differential expression}
 %\VignettePackage{pickgene}
 \documentclass{article}

@@ -1,6 +1,6 @@
 ###########################################################################
 ##
-## $Id: yilin.R,v 1.1 2003/11/25 14:50:35 jgentry Exp $
+## $Id: yilin.R,v 1.2 2003/12/30 19:17:27 jgentry Exp $
 ##
 ##     Copyright (C) 2000 Yi Lin and Brian S. Yandell
 ##
@@ -45,7 +45,6 @@ robustscale<-function(y,x,nslice=400,corcenter=TRUE,decrease=TRUE){
     slicemad<-unlist(tapply(y, slicef, mad, center=0), recursive = TRUE,
                      use.names=FALSE)
   }
-  library( modreg )
   tmp <- slicemad > 0
   if( sum( tmp ) > 3 ) {
     preroblogscale <- smooth.spline(slicex[tmp],log(slicemad[tmp]))
@@ -84,8 +83,8 @@ adjustlevel<-function(ntest,alpha){
 }
 
 ###########################################################################
-## the following function picks genes in 2 condition case with logratio (y) 
-## and logofproduct (intensity). It also serves as the building block for 
+## the following function picks genes in 2 condition case with logratio (y)
+## and logofproduct (intensity). It also serves as the building block for
 ## the later functions for multi-condition and ANOVA.
 pickgene.two <- function ( y, intensity,
                           geneid = 1:length(y),
@@ -116,7 +115,7 @@ pickgene.two <- function ( y, intensity,
   }
   sc$y <- exp( sc$y )
   zcut <- qnorm( singlelevel[1] / 2, lower.tail = FALSE)
-  
+
   sc$lower <- exp( sc$center - zcut * sc$scale )
   sc$upper <- exp( sc$center + zcut * sc$scale )
   if ( npickgene < 0 ) {
@@ -150,7 +149,7 @@ pickgene.two <- function ( y, intensity,
       if( length( negative ))
         points( exp( intensity[negative] ), exp( y[negative] ),
                cex = 0.25, col = "red" )
-      
+
       # center line
       lines( sc$x, exp( sc$center ), col = "red", lty = 2 )
     }
@@ -184,12 +183,12 @@ pickgene.two <- function ( y, intensity,
 }
 
 ###########################################################################
-## the following function picks genes in the situation of a linear sequence 
-## of conditions. The argument condi can be numerical (quantitative description 
-## of the conditions) or ordinal (1 : numberofconditions), depending on the 
-## situation. The function picks genes according to linear trend (d=1), or 
-## linear trend and quadratic trend (d=2). Cubic trend can be included if d is 
-## set to be 3. The argument x is a numberofgenes by numberofconditions matrix 
+## the following function picks genes in the situation of a linear sequence
+## of conditions. The argument condi can be numerical (quantitative description
+## of the conditions) or ordinal (1 : numberofconditions), depending on the
+## situation. The function picks genes according to linear trend (d=1), or
+## linear trend and quadratic trend (d=2). Cubic trend can be included if d is
+## set to be 3. The argument x is a numberofgenes by numberofconditions matrix
 ## consisting of logmeasurements.
 pickgene.poly <-function( x, # data matrix
                          condi = 1:min(ncol(x),2), # condition levels
@@ -234,9 +233,9 @@ pickgene.poly <-function( x, # data matrix
 }
 
 ###########################################################################
-## the following function picks genes in the two-factor (ANOVA) situation. 
-## It ignores interaction, and picks genes according to trends in each factor. 
-## Similar functions can easily be written in the same vein for multi-factor 
+## the following function picks genes in the two-factor (ANOVA) situation.
+## It ignores interaction, and picks genes according to trends in each factor.
+## Similar functions can easily be written in the same vein for multi-factor
 ## situation and taking (some) interactions into consideration.
 model.pickgene <- function( faclevel,
                            facnames = letters[ seq( length( faclevel )) ],
@@ -314,13 +313,13 @@ pickgene <- function( data,
       negative <- numeric( 0 )
     data <- log( data )
   }
-  
+
   collapse <- if( marginal ) "+" else "*"
   numcontr <- ncol( modelmatrix ) - 1
   y <- data %*% modelmatrix
   if( is.null( show ))
     show <- seq( numcontr )
-  
+
   if( meanrank )
     intensity <- rank( y[,1] )
   else

@@ -8,8 +8,6 @@
 \keyword{}
 \seealso{\cite{multipickgene}}
 \examples{
-library( modreg )
-
 ### Note: This uses old pickgene
 #detail of the model (7-8). (first run does not include meas error \eta_i)
 #par(mfrow=c(3,3))

@@ -1,6 +1,6 @@
 #####################################################################
 ##
-## $Id: yandell.R,v 1.1 2003/11/25 14:50:35 jgentry Exp $
+## $Id: yandell.R,v 1.2 2003/12/30 19:17:27 jgentry Exp $
 ##
 ##     Copyright (C) 2001 Brian S. Yandell
 ##
@@ -19,8 +19,8 @@
 ## Foundation, 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 ##
 ###############################################################################
-rangene <- function (n = 10000, center = 4, spread = 2, contamination = 0.05, 
-    alpha = c(1,1), noise = 0.5, omega = c(20,20)) 
+rangene <- function (n = 10000, center = 4, spread = 2, contamination = 0.05,
+    alpha = c(1,1), noise = 0.5, omega = c(20,20))
 {
     contam <- round(n * contamination)
     data <- list()
@@ -39,7 +39,7 @@ rangene <- function (n = 10000, center = 4, spread = 2, contamination = 0.05,
     }
     for (i in 1:2)
         data[[i]] <- data[[i]] + rnorm(n, 0, noise)
-    
+
     known <- data <- as.data.frame(data)
     for (i in 1:2) {
         data[[i]] <- alpha[i] * exp(data[[i]])
@@ -71,10 +71,10 @@ orangene <- function( n = 10000, center = 4, spread = 2, contamination = .05,
   for( i in 1:2 ) {
     ## gene expression
     data[[i]] <- r
-  
+
     ## contamination = differential expression
     data[[i]][seq(contam)] <- data[[i]][seq(contam)] + rnorm(contam)
-    
+
     ## intrinsic noise
     data[[i]] <- data[[i]] + rnorm(n,0,noise)
   }
@@ -119,7 +119,7 @@ pickedhist <- function( pick, show = names( pick ), title = show, p1 = .05,
       else
         tmp <- density( pick[[i]]$score, bw = bw[i] )
       cat( "density bandwidth:", tmp$bw, "\n" )
-      if( rotate ) 
+      if( rotate )
         plot( tmp$y, tmp$x, type = "l", ylab = title[i],
              xlab = "Relative Frequency", main = "" )
       else
@@ -222,7 +222,7 @@ pickedscore <- function( pick, description, show = 1:2, alpha = .05,
   }
   if( !is.null( mfrow ))
     par( mfrow = mfrow, pty = "s" )
-  
+
   library(MASS)
   eqscplot( score[[show[1]]], score[[show[2]]], type = "n",
            xlab = xlab, ylab = ylab )
@@ -248,7 +248,7 @@ pickedscore <- function( pick, description, show = 1:2, alpha = .05,
   probes <- sort( unique( probes ))
   score <- score[ match( probes, pick$score[[1]]$probe, nomatch = 0 ), ]
   dimnames( score ) <- list( probes, names( score ))
-  
+
   pick <- pick$pick
   fold <- pvalue <- matrix( NA, length( probes ), length( pick ),
                            dimnames = list( probes, names( pick )))
@@ -303,7 +303,6 @@ robustbox<-function(y,x,nslice=400,
 
   slicebox <- t( matrix( unlist( tapply( y, slicef, function(x)
     boxplot.stats(x)$stats ), recursive = TRUE, use.names=FALSE), 5 ))
-  library( modreg )
   robmed <- apply( slicebox, 2, median )
   plot(x,y, type = "n", xlab = xlab, ylab = ylab, ylim = ylim )
   if( plotit )
