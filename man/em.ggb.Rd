@@ -39,7 +39,7 @@ independent.}
     \emph{J Computational Biology 00}: 000-000.
 }
 \author{Michael Newton}
-\seealso{\code{\link{oddsplot}}, \code{\link{Ecoli.oddsplot}}}
+\seealso{\code{\link{oddsplot}}}
 \examples{
 \dontrun{
 em.ggb( x, y )
