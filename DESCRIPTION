@@ -1,0 +1,10 @@
+Package: pickgene
+Version: 0.6-1
+Date: 02/27/2002
+Author: Brian S. Yandell <yandell@stat.wisc.edu>
+Title: Adaptive Gene Picking for Microarray Expression Data Analysis
+Description: Functions to Analyze Microarray (Gene Expression) Data.
+Maintainer: Brian S. Yandell <yandell@stat.wisc.edu>
+Depends: modreg
+License: GPL version 2 or newer
+URL: http://www.stat.wisc.edu/~yandell/statgen
