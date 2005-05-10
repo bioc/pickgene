@@ -6,9 +6,11 @@
     used by pickgene.
 }
 \usage{
-model.pickgene( faclevel, facnames = <<see below>>,
-  contrasts.fac = "contr.poly", collapse = "+", show = <<see below>>,
-  renorm = 1, modelexpr = <<see below>>, contrasts.list = <<see below>> )
+model.pickgene(faclevel, facnames = letters[seq(length(faclevel))],
+               contrasts.fac = "contr.poly", collapse = "+", show =
+               NULL, renorm = 1, modelexpr = formula(paste("~",
+               paste(facnames, collapse = collapse))),
+               contrasts.list = contr.list)
 }
 %- maybe also `usage' for other objects documented here.
 \arguments{

@@ -9,13 +9,19 @@
     allowing SD to vary with intensity.
 }
 \usage{
-pickgene(data, geneID=1:nrow(x), overalllevel=0.05, npickgene=-1,
-  marginal = FALSE, rankbased=TRUE, allrank=FALSE, meanrank=FALSE,
-  offset=0, modelmatrix = <<see below>>, faclevel=ncol(x),
-  facnames=<<see below>>, contrasts.fac="contr.poly",
-  show=<<see below>>, main="", renorm=1, drop.negative=F,
-  plotit, mfrow=<<see below>>, mfcol=<<see below>>, ylab, ... )
+pickgene(data, geneID = 1:nrow(data), overalllevel = 0.05,
+         npickgene = -1, marginal = FALSE, rankbased = TRUE,
+         allrank = FALSE, meanrank = FALSE, offset = 0,
+         modelmatrix = model.pickgene(faclevel, facnames,
+         contrasts.fac, collapse, show, renorm), faclevel =
+         ncol(data), facnames =
+         letters[seq(length(faclevel))], contrasts.fac =
+         "contr.poly", show = NULL, main = "", renorm = 1,
+         drop.negative = FALSE, plotit = npickgene < 1, mfrow
+         = c(nr, nc), mfcol = NULL, ylab = paste(shownames,
+         "Trend"), ...)
 }
+
 %- maybe also `usage' for other objects documented here.
 \arguments{
   \item{data}{data matrix}

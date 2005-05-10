@@ -7,10 +7,10 @@
     channels on the same microarray).
 }
 \usage{
-oddsplot(x, y, theta, by.level = 10, rotate = FALSE, offset = 0,
-  main="", xlab = <<see below>>, ylab = <<see below>>,
-  col=<<see below>>, cex = <<see below>>,
-  shrink = FALSE, lims = range( c( x, y )))
+oddsplot(x, y, theta, by.level = 10, rotate = FALSE, offset =
+         0, main = "", xlab = xlabs, ylab = ylabs, col = NULL,
+         cex = c(0.25, 0.75), shrink = FALSE, lims =
+         range(c(x, y)))
 }
 \arguments{
   \item{x}{first condition expression levels}
