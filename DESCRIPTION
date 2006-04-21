@@ -7,4 +7,5 @@ Description: Functions to Analyze Microarray (Gene Expression) Data.
 Maintainer: Brian S. Yandell <yandell@stat.wisc.edu>
 License: GPL version 2 or newer
 URL: http://www.stat.wisc.edu/~yandell/statgen
+biocViews: Microarray, DifferentialExpression
 
