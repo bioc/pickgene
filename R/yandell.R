@@ -1,6 +1,6 @@
 #####################################################################
 ##
-## $Id: yandell.R,v 1.2 2003/12/30 19:17:27 jgentry Exp $
+## $Id$
 ##
 ##     Copyright (C) 2001 Brian S. Yandell
 ##
@@ -223,7 +223,9 @@ pickedscore <- function( pick, description, show = 1:2, alpha = .05,
   if( !is.null( mfrow ))
     par( mfrow = mfrow, pty = "s" )
 
-  library(MASS)
+  if( !require("MASS") )
+     stop("required package not available")
+
   eqscplot( score[[show[1]]], score[[show[2]]], type = "n",
            xlab = xlab, ylab = ylab )
   title( main )
