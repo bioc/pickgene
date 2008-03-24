@@ -1,6 +1,0 @@
-Simulation.pickgene	Yi Lin's simulations for microarray analysis
-em.ggb		EM calculation for Gamma-Gamma-Bernoulli Model
-oddsplot	Odds Plot for Differential Microarray Expression
-pickgene	Plot and Pick Genes based on Differential Expression
-model.pickgene	Create Model Matrix for Orthogonal Contrasts
-robustscale	Robust Estimation of Median (center) and MAD (scale)
