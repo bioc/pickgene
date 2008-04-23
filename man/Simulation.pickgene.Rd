@@ -1,9 +1,9 @@
 \name{Simulation.pickgene}
 \alias{Simulation.pickgene}
 \title{Yi Lin's simulations for microarray analysis}
+\description{Example simulations}
 \usage{
 }
-\description{}
 \details{}
 \keyword{}
 \seealso{\cite{multipickgene}}
