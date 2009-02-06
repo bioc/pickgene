@@ -15,25 +15,27 @@ model.pickgene(faclevel, facnames = letters[seq(length(faclevel))],
 %- maybe also `usage' for other objects documented here.
 \arguments{
   \item{faclevel}{vector with number of levels for each factor}
-  \item{facnames}{vector of factor names (default = "a","b",...)}
+  \item{facnames}{vector of factor names (default = "a", "b", ...)}
   \item{contrasts.fac}{vector of contrast types}
   \item{collapse}{"+" for additive model, "*" for full model with interactions}
   \item{show}{vector of contrast numbers to show (default is all)}
-  \item{renorm}{vector to renormalize contrasts (e.g. use \code{sqrt(2)}
+  \item{renorm}{vector to renormalize contrasts (e.g., use \code{sqrt(2)}
       to turn two-condition contrast into fold change)}
   \item{modelexpr}{model formula}
-  \item{contrasts.list}{list of contrasts indexed by \index{facnames}}
+  \item{contrasts.list}{list of contrasts indexed by \code{facnames}}
 }
+
 \details{
 Creates a model matrix data frame with first column having all 1's and
 other columns having contrasts.
 }
+
 \value{
 Result of call to model.matrix
 }
 \author{Brian Yandell}
 \seealso{\code{\link{model.matrix}}}
 \examples{
-model.pickgene( c(2,3), c("sex","genotype"))
+model.pickgene(c(2,3), c("sex","genotype"))
 }
 \keyword{utilities}
