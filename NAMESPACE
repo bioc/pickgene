@@ -1,0 +1,19 @@
+importFrom(graphics, abline, axis, contour, hist, lines, par, plot,
+           points, text, title)
+importFrom(grDevices, boxplot.stats, graphics.off, postscript)
+importFrom(MASS, eqscplot)
+importFrom(stats, dbeta, dchisq, density, dgamma, dnorm, formula, mad,
+           median, model.matrix, nlm, optim, pnorm, poly, predict,
+           qchisq, qgamma, qnorm, qqnorm, rnorm, runif, smooth.spline,
+           spline, var)
+importFrom(utils, read.table)
+
+export(adjustlevel, chen.poly, chipnorm, dencont, dencum, denlines,
+       do.oddsplot, em.ggb, fitgg, gammaden, holms, lod.ggb, lod.plot,
+       lodprobes, loglik, makecont, model.pickgene, multipickgene, nlminb,
+       nloglik, normal.richmond, npdiag, nploglik, oddsplot, orangene,
+       pickedchisq, pickedhist, pickedpair, pickedscore, pickgene,
+       pickgene.poly, pickgene.two, pickgene2, pmarg, predrecur, rangene,
+       rankgene, robustbox, robustscale, s.check0, s.check1, s.check2,
+       s.marg, shrinkplot, sixden, toprankgene, twoarray.norm, twoarray.plot,
+       twowayanovapickgene)

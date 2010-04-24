@@ -223,9 +223,6 @@ pickedscore <- function( pick, description, show = 1:2, alpha = .05,
   if( !is.null( mfrow ))
     par( mfrow = mfrow, pty = "s" )
 
-  if( !require("MASS") )
-     stop("required package not available")
-
   eqscplot( score[[show[1]]], score[[show[2]]], type = "n",
            xlab = xlab, ylab = ylab )
   title( main )
