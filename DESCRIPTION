@@ -1,5 +1,5 @@
 Package: pickgene
-Version: 1.68.0
+Version: 1.69.0
 Author: Brian S. Yandell <yandell@stat.wisc.edu>
 Title: Adaptive Gene Picking for Microarray Expression Data Analysis
 Description: Functions to Analyze Microarray (Gene Expression) Data.
